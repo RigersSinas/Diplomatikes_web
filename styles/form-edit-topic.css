@@ -1,0 +1,46 @@
+form#editProjectForm {
+    /* ίδια ή παρόμοια στυλ */
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+    background: transparent;
+  }
+  
+  form#editProjectForm label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 15px;
+  }
+  
+  form#editProjectForm input[type="text"],
+  form#editProjectForm textarea,
+  form#editProjectForm input[type="file"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    font-size: 15px;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  form#editProjectForm button[type="submit"] {
+    margin-top: 25px;
+    background-color: #BDDDE4;
+    color: black;
+    padding: 12px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form#editProjectForm button[type="submit"]:hover {
+    background-color: #85a3aa;
+  }
+  

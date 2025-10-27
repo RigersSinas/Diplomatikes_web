@@ -1,0 +1,63 @@
+form#createProjectForm {
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    box-shadow: none;
+    background: transparent;
+    max-width: 100%;
+    
+  }
+  
+  
+  form#createProjectForm label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 15px;
+  }
+  
+  form#createProjectForm input[type="text"],
+  form#createProjectForm textarea,
+  form#createProjectForm input[type="file"] {
+    width: 100%;
+    padding: 12px 14px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    font-size: 15px;
+    font-family: "Segoe UI", sans-serif;
+    background-color: #f9f9f9;
+  }
+  
+  form#createProjectForm textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  form#createProjectForm button[type="submit"] {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background-color: #BDDDE4;
+    color: black;
+    padding: 12px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form#createProjectForm button[type="submit"]:hover {
+    background-color: #85a3aa;
+  }
+  
+  form#createProjectForm .error-message {
+    margin-top: 15px;
+    color: #e74c3c;
+    font-size: 14px;
+  }
+  
+  
+

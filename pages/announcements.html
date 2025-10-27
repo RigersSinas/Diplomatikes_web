@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ανακοινώσεις Εξετάσεων Δ.Ε.</title>
+  <link rel="stylesheet" href="../styles/announcements.css">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script defer src="../javascript/announcements.js"></script>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container">
+      <h1>Τμήμα Μηχανικών Πληροφορικής</h1>
+      <p>Ανακοινώσεις Παρουσίασης Διπλωματικών Εργασιών</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <form id="rangeForm" class="range-bar">
+      <div class="field">
+        <label for="from">Από</label>
+        <input type="date" id="from">
+      </div>
+      <div class="field">
+        <label for="to">Έως</label>
+        <input type="date" id="to">
+      </div>
+      <button type="submit">Εφαρμογή</button>
+    </form>
+
+    <div class="table-wrapper">
+      <table id="annTable">
+        <thead>
+          <tr>
+            <th>Ημερομηνία</th>
+            <th>Ώρα</th>
+            <th>Τίτλος Δ.Ε.</th>
+            <th>Φοιτητής</th>
+            <th>Χώρος / Link</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+  <meta charset="UTF-8" />
+  
+  <title>Πίνακας Καθηγητή</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../styles/professor-style.css" />
+  <link rel="stylesheet" href="../styles/form-create-topic.css" />
+  <link rel="stylesheet" href="../styles/form-edit-topic.css" />
+  <link rel="stylesheet" href="../styles/dashboard.css" />
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="../javascript/professor-script.js"></script>
+  <script src="../javascript/modal-create-topic.js"></script>
+  <script src="../javascript/modal-edit-topic.js"></script>
+  <script src="../javascript/invitations.js"></script> 
+  <script src="../javascript/modal-project-invites.js"></script> 
+  <script src="../javascript/modal-project-notes.js"></script>
+  <script src="../javascript/modal-project-cancel.js"></script>
+  <script src="../javascript/upload_script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  
+
+</head>
+<body>
+
+    <header class="header-bar">
+        <div class="top-bar">
+          <div class="user-box">
+            <img src="../assets/user.png" alt="User Icon" class="user-icon" />
+            <span id="professorName">andreas</span>
+            <button id="logoutBtn">Αποσύνδεση</button>
+          </div>
+        </div>
+      
+        <nav class="menu" id="mainMenu">
+          <a href="#"></a>
+          <a href="#"></a>
+          <a href="#"></a>
+          <a href="#"></a>
+        </nav>
+      </header>
+      
+      <main class="main-content">
+
+        <div class="dashboard">
+
+          <h2 id="profDashboardTitle">Πίνακας Ελέγχου Καθηγητή</h2>
+    
+          <div class="dashboard-buttons" id="profExtraBtns">
+            <button class="dashboard-btn" data-modal="create">Δημιουργία Θέματος</button>
+            <button class="dashboard-btn" data-modal="view">Προβολη Προσκλήσεων</button>
+            <button class="dashboard-btn" data-modal="stats">Στατιστικά</button>
+
+            <button class="dashboard-btn secret-only" data-modal="upload-data">
+              Upload Data
+            </button>
+
+          </div>
+        </div>
+      
+        <!-- ΕΝΑ δυναμικό modal -->
+        <div class="modal" id="genericModal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalTitle"></div>
+            <div id="modalBody"></div>
+            <div id="createResponse" style="margin-top: 10px; color: green;"></div>
+          </div>
+        </div>
+
+      </main>
+      
+      
+      <div id="projectsTableContainer" style="margin-top: 10px;">
+        
+      <!-- ▸ ΕΝΙΑΙΟ export-bar + filters  ------------------------------------>
+
+      <div class="export-bar" id="profExport">
+
+        <!-- Φίλτρα ---------------------------------------------->
+
+        <div class="filters-container" id="profFilters">
+          <label for="filterPhase">Κατάσταση:</label>
+          <select id="filterPhase">
+            <option value="">Όλες</option>
+            <option value="draft">draft</option>
+            <option value="submitted">submitted</option>
+            <option value="active">active</option>
+            <option value="in_review">in_review</option>
+            <option value="cancelled">cancelled</option>
+            <option value="marking">marking</option>
+            <option value="marked">marked</option>
+            <option value="finished">finished</option>
+          </select>
+
+          <label for="filterRole">Ρόλος:</label>
+          <select id="filterRole">
+            <option value="">Όλοι</option>
+            <option value="supervisor">Supervisor</option>
+            <option value="reviewer">Reviewer</option>
+          </select>
+        </div>
+
+        <!-- Εξαγωγή ---------------------------------------------->
+         
+        <div class="export-controls">
+          <label for="exportFormat">Εξαγωγή:</label>
+          <select id="exportFormat">
+            <option value="csv">CSV</option>
+            <option value="json">JSON</option>
+          </select>
+          <button id="exportBtn">Λήψη</button>
+        </div>
+      </div>
+
+        <table id="projectsTable" class="project-table">
+          <thead>
+            <tr>
+              <th>Τίτλος</th>
+              <th>Περίληψη</th>
+              <th>Φοιτητής</th>
+              <th>Κατάσταση</th>
+              <th>Ρόλος</th> <!-- ΝΕΟ -->
+              <th>Ημ/νία</th>
+              <th>PDF</th>
+              <th>Ενεργός Χρόνος</th>
+              <th>Ενέργειες</th>
+            </tr>
+          </thead>                            
+          <tbody>
+            <!-- Θα προστεθούν δυναμικά -->
+          </tbody>
+        </table>
+      </div>
+      
+      
+</body>
+</html> 

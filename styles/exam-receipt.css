@@ -1,0 +1,84 @@
+/* ----------------------------------------------------
+   Στυλ A4 (exam_receipt.css) – μοντέρνα πινελιά
+---------------------------------------------------- */
+
+/* 1. Βασικά χρώματα / μεταβλητές */
+:root{
+  --royal-blue : #1c19d7;
+  --light-bg   : #f7f7f9;
+  --stripe     : #fdfdfd;
+  --shadow     : 0 4px 12px rgba(0,0,0,.08);
+  --border     : #d0d0d0;
+}
+
+/* 2. Canvas */
+body{
+  font-family:"Times New Roman",serif;
+  margin:0;min-height:100vh;
+  display:flex;justify-content:center;align-items:center;
+  background:var(--light-bg);
+  margin: 50px;
+}
+
+/* 3. A4 wrapper */
+.page{
+  width:210mm;height:297mm;
+  padding:25mm 20mm;background:#fff;
+  box-shadow:var(--shadow);
+  position:relative;overflow:hidden;
+  border-radius:8px;
+}
+
+/* 4. Τίτλοι */
+h1,h2{margin:0;text-align:center;text-transform:uppercase;color:#333}
+h1{font-size:17pt;color:var(--royal-blue);margin-bottom:12px}
+h2{font-size:15pt;letter-spacing:.5px;margin-top:4px}
+
+/* 5. Κείμενο & λίστες */
+p,ol{margin:10px 0;font-size:10.5pt;line-height:1.35;text-align:justify}
+ol{margin-left:22px}
+.center{text-align:center}
+
+/* 6. Μοντέρνος πίνακας */
+table{
+  width:100%;border-collapse:separate;
+  border-spacing:0;
+  margin-top:24px;
+  font-size:11pt;
+  background:#fff;
+  border:1px solid var(--border);
+  border-radius:8px;
+  overflow:hidden;          /* clip radius σε older browsers */
+  box-shadow:var(--shadow);
+}
+
+thead th{
+  background:var(--royal-blue);
+  color:#fff;
+  padding:5px 8px;
+  font-weight:600;
+  letter-spacing:.35px;
+  border:none;
+}
+
+tbody tr{
+  transition:background .2s;
+}
+
+tbody tr:nth-child(odd){ background:var(--stripe); }
+
+tbody tr:hover{ background:#eef1ff; }
+
+table td{
+  padding:5px 10px;
+  border:none;
+  border-top:1px solid var(--border);
+}
+
+tbody td:first-child{ width:65%; }
+
+/* 7. Υπογραφές */
+.footer{
+  position:absolute;bottom:18mm;width:100%;
+  text-align:center;font-size:10pt;color:#666;
+}

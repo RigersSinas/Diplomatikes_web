@@ -1,0 +1,96 @@
+.dashboard {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  .dashboard-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .dashboard-btn {
+    padding: 18px 26px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Ξεχωριστά χρώματα ανά κουμπί */
+  .dashboard-btn[data-modal="create"] {
+    background-color: #DDF6D2; /* πράσινο */
+  }
+  
+  .dashboard-btn[data-modal="view"] {
+    background-color: #A4CCD9; /* μπλε */
+  }
+  
+  .dashboard-btn[data-modal="students"] {
+    background-color: #F2E2B1; /* κυανό */
+  }
+  
+  .dashboard-btn[data-modal="stats"] {
+    background-color: #E9A5F1; /* κίτρινο */
+    color: #333; /* καλύτερη αντίθεση με το ανοιχτό φόντο */
+  }
+
+  .dashboard-btn[data-modal="upload-data"] {
+    background-color: #ffcc92; /* κίτρινο */
+    color: #333; /* καλύτερη αντίθεση με το ανοιχτό φόντο */
+  }
+  
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 1000px;
+    text-align: left;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.2);
+    position: relative;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  .modal-content h3 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #f00808;
+  }
+  
+  .close:hover {
+    color: #333;
+  }
+  

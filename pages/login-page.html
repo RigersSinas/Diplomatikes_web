@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html lang="el">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Σύνδεση στο Πανεπιστήμιο</title>
+
+  <link rel="stylesheet" href="   ../styles/login-style.css">
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <script src="  ../javascript/login-script.js"></script>
+  
+</head>
+
+<body>
+
+  <div class="login-container">
+    
+    <h1>Login Page</h1>
+    <p class="subtitle">Εισέλθετε ως φοιτητής ή καθηγητής</p>
+
+    <label for="username">Όνομα Χρήστη</label>
+    <input type="text" id="username" placeholder="π.χ. andreas" />
+
+    <label for="password">Κωδικός Πρόσβασης</label>
+    <input type="password" id="password" placeholder="π.χ. 0000" />
+
+    <button id="loginBtn">Είσοδος</button>
+
+    <!-- Νέο κουμπί/link προς τις Ανακοινώσεις -->
+    <div style="margin-top:16px; text-align:center;">
+      <a href="announcements.html" class="btn-announcements">Ανακοινώσεις Εξετάσεων</a>
+    </div>
+
+    <p id="response" class="error-message"></p>
+  </div>
+
+
+</body>
+ 
+</html>
