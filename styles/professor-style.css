@@ -1,0 +1,1074 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fb;
+  color: #333;
+ }
+ 
+
+/* Header */
+.header-bar {
+  background: linear-gradient(135deg, #0f2027, #203a43, #469169);
+  color: #f1f1f1;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+    0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
+}
+
+.content-box {
+    background-color: white;
+    padding: 30px 40px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+
+.menu {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+
+/* Περιεχόμενο */
+.main-content {
+  padding: 30px;
+}
+
+.main-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+.user-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .user-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  #professorName {
+    font-weight: 500;
+    color: #e0eafc;
+    font-size: 15px;
+  }
+  
+  #logoutBtn {
+    padding: 6px 14px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #logoutBtn:hover {
+    background-color: #c0392b;
+  }
+  
+
+  /* =============== Responsive =============== */
+
+  @media (max-width: 1000px) {
+    .header-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  
+    .menu {
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+    }
+  
+  
+    #logoutBtn {
+      align-self: flex-start;
+      padding: 7px 14px;
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .content-box {
+      padding: 20px;
+      border-radius: 14px;
+    }
+  }
+  
+  #projectsTableContainer {
+    margin: 0px auto;
+    width: 85%;
+    height: 500px; /* Συγκεκριμένο ύψος */
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: #fafafa00;
+    border-radius: 8px;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  /* Απόκρυψη scrollbar στα WebKit (Chrome, Safari) */
+  #projectsTableContainer::-webkit-scrollbar {
+    display: none;
+  }
+  
+
+  .project-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .project-table thead {
+    background-color: #f0f0f0;
+  }
+  
+  .project-table th, .project-table td {
+    padding: 17px 16px;
+    text-align: center;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .project-table th {
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .project-table tbody tr:hover {
+    background-color: #f9f9f9;
+    transition: background-color 0.2s ease;
+  }
+  
+  .project-table td a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .project-table td a:hover {
+    text-decoration: underline;
+  }
+  
+
+  .actions-cell {
+    white-space: nowrap;
+    text-align: center;
+  }
+  
+  .action-btn {
+    padding: 6px 6px;
+    font-size: 10px;
+    margin: 0 2px;
+    border: none;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  .action-btn.edit {
+    background-color: #8bd1ff;
+    color: white;
+  }
+  
+  .action-btn.edit:hover {
+    background-color: #2980b9;
+  }
+  
+  .action-btn.delete {
+    background-color: #ff1900;
+    color: white;
+  }
+  
+  .action-btn.delete:hover {
+    background-color: #c0392b;
+  }
+  
+  .action-btn.more {
+    background-color: #ffd88f;
+  }
+  
+  .action-btn.invites {
+    background-color: #C0C9EE;
+  }
+
+  .action-btn.grade-modal {
+    background-color: #ADEED9;
+  }
+
+  .action-btn.receipt {
+    background-color: #FFDCDC;
+  }
+
+  .action-btn.receipt {
+    background-color: #FFDCDC;
+  }
+
+  .action-btn i {
+    font-size: 14px;
+  }
+  
+    .action-btn.start-marking
+ {
+    background-color: #BBFBFF;
+  }
+  
+  .details-tables-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  
+  .details-table-wrapper {
+    flex: 1 1 45%;
+    min-width: 300px;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+  }
+  
+  .details-table-wrapper h4 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .details-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .details-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .details-table th {
+    text-align: left;
+    padding: 10px;
+    font-weight: 600;
+    color: #444;
+    width: 40%;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  
+  .details-table td {
+    padding: 10px;
+    color: #333;
+    border-bottom: 1px solid #e6e6e6;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .details-tables-container {
+      flex-direction: column;
+    }
+  }
+  
+  .alert-message {
+    padding: 12px 20px;
+    margin-top: 20px;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: "Segoe UI", sans-serif;
+    display: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  .alert-success {
+    background-color: #b8f9c6;
+    color: #155724;
+    border: 2px solid #558d62;
+  }
+  
+  .alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+  }
+  
+  #studentSearch {
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    background-color: #f9f9f9;
+    padding: 12px 16px;
+    font-size: 15px;
+    outline: none;
+    box-shadow: none;
+    transition: border 0.2s ease-in-out;
+  }
+  
+  #studentSearch:focus {
+    border-color: #0077cc;
+  }
+  
+  #studentSearchResults {
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    max-height: 220px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+    display: none;
+    padding: 6px 0;
+  }
+  
+  /* Στυλ για κάθε στοιχείο της λίστας */
+  .autocomplete-item {
+    padding: 10px 16px;
+    font-size: 15px;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  
+  /* Αφαιρούμε το border στο τελευταίο item */
+  .autocomplete-item:last-child {
+    border-bottom: none;
+  }
+  
+  /* Hover effect */
+  .autocomplete-item:hover {
+    background-color: #f2f8ff;
+    color: #0077cc;
+    font-weight: 500;
+    border-radius: 4px;
+  }
+  
+  /* Αν θέλεις να το κάνεις inline αντί για absolute: */
+  form {
+    position: relative;
+  }
+  
+
+  .remove-student-btn {
+    background-color: #ff4d4f;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(255, 77, 79, 0.2);
+  }
+  
+  .remove-student-btn:hover {
+    background-color: #e63946;
+    transform: translateY(-2px);
+  }
+  
+
+
+
+  .btn-accept, .btn-decline {
+    padding: 6px 12px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-right: 5px;
+  }
+  
+  .btn-accept {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  .btn-decline {
+    background-color: #f44336;
+    color: white;
+  }
+
+  /* Project / Invite status chips */
+.status-accepted  { padding: 6px 10px; border-radius: 25px;  background-color:#6aff74; font-weight:600; }   /* πράσινο  */
+.status-pending   { padding: 6px 10px; border-radius: 25px;  background-color:#f0ad1e; font-weight:600; }   /* πορτοκαλί */
+.status-cancelled { padding: 6px 10px; border-radius: 25px;  background-color:#e1e1e1; font-weight:600; }   /* γκρι      */
+.status-rejected  { padding: 6px 10px; border-radius: 25px;  background-color:#d9534f; font-weight:600; }   /* κόκκινο   */
+
+
+.notes-form-bar {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:4px;
+}
+#noteBody { width:100%; resize:vertical; }
+#charCount { font-size:0.9em; color:#666; }
+
+
+
+/* === Σημειώσεις (form#noteForm) ========================= */
+
+form#noteForm {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  background: transparent;
+}
+
+form#noteForm label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 15px;
+}
+
+/* ίδιο look & feel με τα άλλα input/textarea */
+form#noteForm textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  font-size: 15px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9f9;
+  resize: vertical;          /* να μεγαλώνει/μικραίνει */
+  min-height: 90px;
+}
+
+form#noteForm button[type="submit"] {
+  margin-top: 25px;
+  background-color: #BDDDE4;
+  color: black;
+  padding: 12px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form#noteForm button[type="submit"]:hover {
+  background-color: #85a3aa;
+}
+
+/* γραμμή με counter + κουμπί (matches .notes-form-bar που φτιάξαμε) */
+.notes-form-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+}
+
+/* counter */
+#charCount {
+  font-size: 13px;
+  color: #556;
+}
+
+/* προαιρετικά, αλλαγή χρώματος όταν φτάνεις το όριο */
+#charCount.limit-reached { color: #d9534f; }
+
+
+
+
+/* === Ακύρωση Διπλωματικής (form#cancelForm) =========================== */
+
+form#cancelForm {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  background: transparent;
+}
+
+/* Ετικέτες ― ίδιο στυλ με τις άλλες φόρμες */
+form#cancelForm label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 15px;
+}
+
+/* Inputs ― “pill” αισθητική, 100 % πλάτος */
+form#cancelForm input[type="number"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  font-size: 15px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9f9;
+  box-sizing: border-box;
+}
+
+/* Κουμπί υποβολής */
+form#cancelForm button[type="submit"] {
+  margin-top: 25px;
+  background-color: #BDDDE4;   /* ίδιο palette με τις άλλες φόρμες */
+  color: black;
+  padding: 12px 24px;
+  font-size: 14px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form#cancelForm button[type="submit"]:hover {
+  background-color: #85a3aa;
+}
+
+/* Μικρή responsive διάταξη ― βάζει τα δύο πεδία δίπλα-δίπλα σε wide οθόνες */
+@media (min-width: 500px) {
+  form#cancelForm .field-row {
+    display: flex;
+    gap: 16px;
+  }
+  form#cancelForm .field-row > div { flex: 1; }
+}
+
+
+.action-btn.review i { color:#3c8dbc; }   /* μπλε βελάκι */
+
+
+/* ──────────────────────────────────────────────
+   1. wrapper φόρμας προγραμματισμού εξέτασης
+────────────────────────────────────────────── */
+#assessmentForm{
+  margin:0; padding:0; max-width:100%;
+  font-family:"Segoe UI",sans-serif;
+}
+
+/* ετικέτες */
+#assessmentForm label{
+  display:block;
+  margin:18px 0 8px;
+  font-weight:600;
+  font-size:15px;
+  color:#2c3e50;
+}
+
+/* κοινά input (date, time, url, text) + select */
+#assessmentForm input[type="date"],
+#assessmentForm input[type="time"],
+#assessmentForm input[type="text"],
+#assessmentForm input[type="url"],
+#assessmentForm select{
+  width:100%;
+  padding:10px 14px;
+  border:2px dashed #3c8dbc;
+  border-radius:25px;
+  background:#f9fcff;
+  font-size:14px;
+  transition:border-color .25s;
+  box-sizing:border-box;
+}
+#assessmentForm input:hover,
+#assessmentForm select:hover    { border-color:#33749e; }
+#assessmentForm input:focus,
+#assessmentForm select:focus    { outline:none; border-color:#1e5f80; }
+
+/* textarea */
+#assessmentForm textarea{
+  width:100%;
+  padding:12px 14px;
+  border:2px solid #ccc;
+  border-radius:18px;
+  resize:vertical;
+  font-size:14px;
+  font-family:"Segoe UI",sans-serif;
+  background:#fafafa;
+}
+
+/* υποβολή */
+#assessmentForm button[type="submit"]{
+  margin-top:24px;
+  padding:10px 24px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(135deg,#3c8dbc 0%,#559cc9 100%);
+  color:#fff;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+  transition:transform .15s,box-shadow .15s;
+}
+#assessmentForm button[type="submit"]:hover  { transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,.2); }
+#assessmentForm button[type="submit"]:active { transform:none;            box-shadow:0 2px 6px rgba(0,0,0,.15); }
+#assessmentForm button[type="submit"]:focus  { outline:3px solid #c3dced; outline-offset:2px; }
+
+/* ──────────────────────────────────────────────
+   2. εναλλαγή ορατότητας πεδίων (onsite / remote)
+────────────────────────────────────────────── */
+#onsiteFields, #remoteFields{ transition:all .2s ease; }
+
+
+
+/* ─────────────────────────────────────────────
+   scores-table  (modal βαθμολογίας)
+───────────────────────────────────────────── */
+.scores-table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:6px;
+  border-radius:12px;
+  overflow:hidden;              /* κόβει τις γωνίες */
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+  font-family:"Segoe UI",sans-serif;
+  font-size:14px;
+}
+
+/* κεφαλίδα */
+.scores-table thead th{
+  background:#f5f7fa;
+  padding:10px 14px;
+  text-align:center;
+  font-weight:700;
+  color:#2c3e50;
+}
+
+/* εναλλαγή χρώματος γραμμών */
+.scores-table tbody tr:nth-child(even) td{ background:#fafbfc; }
+
+.scores-table tbody th{
+  background:#f0f3f7;
+  padding:10px 14px;
+  text-align:left;
+  width:160px;
+  font-weight:600;
+  color:#2c3e50;
+  white-space:nowrap;
+}
+
+.scores-table tbody td{
+  padding:6px 10px;
+  text-align:center;
+}
+
+/* πεδία input (0-10) – “pill” αισθητική */
+.scores-table input[type=number]{
+  width:70px;
+  padding:8px 10px;
+  border:2px dashed #3c8dbc;
+  border-radius:20px;
+  background:#f9fcff;
+  font-size:14px;
+  text-align:center;
+  transition:border-color .25s;
+}
+.scores-table input[type=number]:hover  { border-color:#33749e; }
+.scores-table input[type=number]:focus  { border-color:#1e5f80; outline:none; }
+
+/* disabled → γκρι, άτονο */
+.scores-table input[type=number]:disabled{
+  background:#f2f2f2;
+  border-color:#d0d0d0;
+  color:#777;
+}
+
+/* κουμπί αποθήκευσης (pill gradient) */
+.save-scores-btn{
+  margin-top:20px;
+  padding:10px 24px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(135deg,#3c8dbc 0%,#559cc9 100%);
+  color:#fff;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+  transition:transform .15s,box-shadow .15s;
+}
+.save-scores-btn:hover  { transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,.2); }
+.save-scores-btn:active { transform:none;              box-shadow:0 2px 6px rgba(0,0,0,.15); }
+.save-scores-btn:disabled{ opacity:.45; cursor:default; transform:none; box-shadow:none; }
+
+/* «κουμπάκι» κατάστασης */
+.phase-badge{
+  display:inline-block;
+  padding:8px 15px;
+  border-radius:25px;
+  font-size:12px;
+  font-weight:600;
+  color:#fff;               /* προσαρμόζεται καλά σε ανοιχτά pastel */
+}
+
+/* ==============================================================
+   EXPORT-BAR + FILTERS  (καθηγητής / γραμματεία)
+   ============================================================== */
+
+/* “κάρτα” περιβλήματος  -------------------------------------- */
+.export-bar{
+  margin-bottom: 30px;
+  padding: 12px 18px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;          /* ↳ μικρές οθόνες = νέο row */
+  align-items: center;
+  gap: 32px;                /* κενό ανάμεσα σε groups */
+  background: #e4e4e4b9;
+  border: 3px solid #c3c3c3;
+  border-radius: 35px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+
+/* ------------------------------------------------------------
+   1.  Φ Ι Λ Τ Ρ Α   (filters-container *μέσα* στο export-bar)
+   -----------------------------------------------------------*/
+.export-bar .filters-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 40px;                /* κρατάμε το παλιό spacing */
+}
+
+.export-bar .filters-container label{
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.export-bar .filters-container select{
+  padding: 5px 10px;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #f8f8f8;
+  color: #333;
+  transition: border-color .25s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,.10);
+}
+.export-bar .filters-container select:focus{
+  outline:none;
+  border-color:#0077cc;
+  background:#fff;
+}
+
+/* ------------------------------------------------------------
+   2.  Ε Ξ Α Γ Ω Γ Η   (export-controls)
+   -----------------------------------------------------------*/
+.export-controls{                /* --> νέο μικρό wrap για καθαρότητα */
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.export-controls label{
+  font-weight:600;
+  color:#374151;
+}
+
+/* select “pill” */
+#exportFormat{
+  padding: 6px 10px;
+  border: 2px solid #515151;
+  border-radius: 10px;
+  font-size: 14px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color .25s;
+}
+#exportFormat:focus{
+  outline:none;
+  border-color:#1c4e69;
+}
+
+/* κουμπί λήψης */
+#exportBtn{
+  padding: 8px 22px;
+  border:none;
+  border-radius:25px;
+  background:#26529e;
+  color:#fff;
+  font-weight:700;
+  font-size:14px;
+  letter-spacing:.3px;
+  cursor:pointer;
+  transition:transform .15s, box-shadow .15s;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+#exportBtn:hover  {transform:translateY(-2px);box-shadow:0 4px 10px rgba(0,0,0,.18);}
+#exportBtn:active {transform:none;            box-shadow:0 2px 6px rgba(0,0,0,.15);}
+#exportBtn:focus  {outline:3px solid #c3dced; outline-offset:2px;}
+
+/* ------------------------------------------------------------
+   3.  Responsive tweak (stack κάθετα <640 px)
+   -----------------------------------------------------------*/
+@media (max-width:640px){
+  .export-bar        {flex-direction:column; align-items:flex-start; gap:22px;}
+  .export-controls   {gap:12px;}
+  .filters-container {gap:22px;}
+}
+
+
+/* ──────────────────────────────────────────────
+   1. wrapper φόρμας upload δεδομένων
+────────────────────────────────────────────── */
+#bulkUploader {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ετικέτες – αν προστεθούν */
+#bulkUploader label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #2c3e50;
+}
+
+/* input αρχείου */
+#bulkUploader input[type="file"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px dashed #3c8dbc;
+  border-radius: 25px;
+  background: #f9fcff;
+  font-size: 14px;
+  transition: border-color 0.25s;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#bulkUploader input[type="file"]:hover {
+  border-color: #33749e;
+}
+#bulkUploader input[type="file"]:focus {
+  outline: none;
+  border-color: #1e5f80;
+}
+
+/* κουμπιά */
+#bulkUploader .mini-btn {
+  margin-top: 12px;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #3c8dbc 0%, #559cc9 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+#bulkUploader .mini-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+#bulkUploader .mini-btn:active {
+  transform: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+#bulkUploader .mini-btn:focus {
+  outline: 3px solid #c3dced;
+  outline-offset: 2px;
+}
+
+/* κουμπί διαγραφής (κόκκινο) */
+#bulkUploader .mini-btn.danger {
+  background: linear-gradient(135deg, #c0392b 0%, #e74c3c 100%);
+  margin-left: 15px;
+}
+
+
+/* ──────────────────────────────────────────────
+   Οπτικά όμορφο πλαίσιο για τα αποτελέσματα
+────────────────────────────────────────────── */
+.response-box {
+  display: none;
+  padding: 14px 18px;
+  margin-top: 16px;
+  border-radius: 35px;
+  background-color: #ecf5fd;
+  color: #000000;
+  font-size: 14px;
+  line-height: 1.5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+/* επιτυχία */
+.response-box.success {
+  background-color: #e7f9f1;
+}
+
+/* αποτυχία */
+.response-box.error {
+  background-color: #fdecea;
+  color: #a94442;
+  border-left-color: #e74c3c;
+}
+
+
+
+/* ─────────────────────────────────────────────────────────────
+   Styling για τον πίνακα στατιστικών (class="details-table")
+───────────────────────────────────────────────────────────── */
+.details-table {
+  width: auto;            /* αυτόματο πλάτος */
+  margin: 0 auto 24px;    /* οριζόντια κεντράρισμα */
+  border-collapse: collapse;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* κεφαλίδα */
+.details-table thead {
+  background: #005aba;
+}
+.details-table thead th {
+  color: #fff;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  border-bottom: 2px solid rgba(255,255,255,0.3);
+}
+
+/* σώμα */
+.details-table tbody tr:nth-child(odd) {
+  background: #f7f9fc;
+}
+.details-table tbody tr:hover {
+  background: #e8f1fb;
+}
+.details-table tbody td {
+  padding: 12px 16px;
+  font-size: 14px;
+  color: #1c3e57;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;     /* κεντράρισμα περιεχομένου */
+}
+
+/* 1η στήλη πιο στενή */
+.details-table tbody td:first-child,
+.details-table thead th:first-child {
+  width: 30%;             /* ρυθμίζεις ανάλογα */
+  max-width: 100px;
+}
+
+/* Responsive: σε mobile το κάνουμε block */
+@media (max-width: 600px) {
+  .details-table thead { display: none; }
+  .details-table, .details-table tbody, .details-table tr, .details-table td {
+    display: block;
+    width: 100%;
+  }
+  .details-table tr { margin-bottom: 16px; }
+  .details-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+  .details-table td:before {
+    content: attr(data-label);
+    position: absolute;
+    left: 16px;
+    width: calc(50% - 32px);
+    text-align: left;
+    font-weight: 600;
+    color: #374151;
+  }
+}
+
+
+
+/* wrapper για όλα τα charts */
+.stats-charts {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+/* σταθερό πλαίσιο για κάθε chart ώστε να έχουν όλα το ίδιο μέγεθος */
+.chart-container {
+  width: 280px;
+  height: 280px;
+  position: relative; /* για να γεμίζει το canvas όλο το container */
+}
+
+/* βεβαιώσου ότι το canvas πιάνει όλο το container */
+.chart-container canvas {
+  width: 100% !important;
+  height: 100% !important;
+}

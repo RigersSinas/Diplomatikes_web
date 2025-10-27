@@ -1,0 +1,875 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: #f8f9fb;
+  color: #333;
+}
+
+.header-bar {
+    background: linear-gradient(135deg, #000000, #000000, #000000);
+    color: #f1f1f1;
+    padding: 18px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow:
+      inset 0 -1px 0 rgba(255, 255, 255, 0.05),
+      0 4px 12px rgba(0, 0, 0, 0.3);
+    backdrop-filter: saturate(180%) blur(10px);
+    -webkit-backdrop-filter: saturate(180%) blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  
+
+.logo {
+  font-size: 22px;
+  font-weight: bolder;
+  letter-spacing: 0.5px;
+}
+
+.content-box {
+    background-color: white;
+    padding: 10px 60px 60px 60px;
+    border-radius: 18px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    margin: 0 auto;
+  }
+  
+
+.menu {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 14px;
+  border-radius: 25px;
+  transition: background 0.3s;
+}
+
+.menu a:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+
+/* Περιεχόμενο */
+.main-content {
+  padding: 50px 40px;
+}
+
+.main-content h2 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+.user-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  
+  .user-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  #professorName {
+    font-weight: 500;
+    color: #e0eafc;
+    font-size: 15px;
+  }
+  
+  #logoutBtn {
+    padding: 6px 14px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s ease;
+  }
+  
+  #logoutBtn:hover {
+    background-color: #c0392b;
+  }
+  
+
+  /* =============== Responsive =============== */
+
+  @media (max-width: 1000px) {
+    .header-bar {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+    }
+  
+    .menu {
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+    }
+  
+  
+    #logoutBtn {
+      align-self: flex-start;
+      padding: 7px 14px;
+      font-size: 13px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .content-box {
+      padding: 20px;
+      border-radius: 14px;
+    }
+  }
+  
+
+/* 1) flex wrapper ώστε οι κάρτες να κάθονται δίπλα-δίπλα  */
+.details-wrapper{
+  display:flex;
+  gap:24px;
+  flex-wrap:wrap;           /* σε mobile θα πέσουν η μία κάτω από την άλλη */
+  justify-content:center;
+}
+
+/* 2) card look */
+.details-card{
+  flex:1 1 420px;           /* min-width 420px – γεμίζει διαθέσιμο χώρο */
+  border:1px solid #e0e0e0;
+  border-radius:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,.08);
+  background:#fff;
+  overflow:hidden;
+  margin-top:20px;
+}
+
+/* 3) πίνακας με “zebra rows” και ίδια γραφικά με το draftForm  */
+.details-table{
+  width:100%;
+  border-collapse:collapse;
+  font-family:"Segoe UI",sans-serif;
+  font-size:14px;
+}
+
+.details-table thead th{
+  text-align:left;
+  padding:14px 18px;
+  background:#f5f7fa;
+  font-size:16px;
+  font-weight:700;
+  border-bottom:1px solid #e0e0e0;
+}
+
+.details-table tbody th{
+  width:220px;
+  padding:12px 18px;
+  background:#f0f3f7;
+  font-weight:600;
+  color:#2c3e50;
+}
+
+.details-table tbody td{
+  padding:12px 18px;
+  background:#fff;
+}
+
+.details-table tbody tr:nth-child(even) td{
+  background:#fafbfc;
+}
+
+/* 4) links */
+.details-table a{
+  color:#0066cc;
+  text-decoration:none;
+}
+.details-table a:hover{
+  text-decoration:underline;
+}
+
+  
+  a.pdf-link {
+    color: #6a1b9a;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  a.pdf-link i {
+    margin-right: 5px;
+  }
+
+  .dashboard {
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  
+  .dashboard-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .dashboard-btn {
+    padding: 18px 26px;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px;
+    color: black;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-btn:hover {
+    transform: translateY(-2px);
+  }
+  
+  .dashboard-btn[data-modal="refresh"] {
+    background-color: #CDE3FF; /* απαλό γαλάζιο */
+    color: black;
+  }
+  
+  .dashboard-btn[data-modal="invite"] {
+    background-color: #DDF6D2; /* απαλό ροζ */
+    color: black;
+  }
+  
+
+  .dashboard-btn[data-modal="upload"] {
+    background-color: #FEC5F6; 
+    color: black;
+  }
+  
+  .dashboard-btn[data-modal="add-link"] {
+    background-color: #FED16A; 
+    color: black;
+  }
+
+  .dashboard-btn[data-modal="schedule-assessment"] {
+    background-color: #c5d3f1; 
+    color: black;
+  }
+
+    .dashboard-btn[data-modal="view-receipt"] {
+    background-color: #dbbde8; 
+    color: black;
+  }
+
+  .dashboard-btn[data-modal="add-repo"] {
+    background-color: #FAA4BD; 
+    color: black;
+  }
+
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+  }
+  
+  
+  .modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 30px;
+    border-radius: 20px;
+    max-width: 1000px;
+    text-align: left;
+    box-shadow: 0 6px 30px rgba(0,0,0,0.2);
+    position: relative;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+  .modal-content h3 {
+    margin-top: 0;
+    color: #2c3e50;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 26px;
+    cursor: pointer;
+    color: #999;
+  }
+  
+  .close:hover {
+    color: #333;
+  }
+  
+
+  #studentInfoForm {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  #studentInfoForm .form-row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  #studentInfoForm .form-row label {
+    min-width: 160px;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 14px;
+  }
+  
+  #studentInfoForm .form-row input[type="text"] {
+    flex: 1;
+    padding: 6px 10px;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    font-family: "Segoe UI", sans-serif;
+  }
+  
+
+#editBtn,
+#saveBtn {
+  background-color: #c5f4ff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 10px;
+  font-family: "Segoe UI", sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+#editBtn:hover,
+#saveBtn:hover {
+  background-color: #a4eeff;
+}
+
+
+input.editable {
+  background-color: #fffceb;
+  border: 2px solid #048aff;
+  box-shadow: 0 0 5px rgba(10, 112, 255, 0.5);
+}
+
+
+#professorSearch {
+  border: 2px solid #ccc;
+  border-radius: 25px;
+  background-color: #f9f9f9;
+  padding: 10px 16px;
+  font-size: 15px;
+  outline: none;
+  width: 400px;
+  margin-left: 10px;
+  box-shadow: none;
+  transition: border 0.2s ease-in-out;
+}
+
+#professorSearch:focus {
+  border-color: #0077cc;
+}
+
+#autocompleteResults {
+  margin-top: 6px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-height: 220px;
+  overflow-y: auto;
+  position: absolute;
+  width: 100%;
+  z-index: 9999;
+  display: none;
+  padding: 6px 0;
+}
+
+/* κοινό styling */
+.autocomplete-item {
+  padding: 10px 16px;
+  font-size: 15px;
+  color: #2c3e50;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.autocomplete-item:last-child {
+  border-bottom: none;
+}
+
+.autocomplete-item:hover {
+  background-color: #f2f8ff;
+  color: #0077cc;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+
+.project-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 14px;
+  background-color: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.project-table thead {
+  background-color: #f0f0f0;
+}
+
+.project-table th, .project-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.project-table th {
+  font-weight: 600;
+  color: #333;
+}
+
+.project-table tbody tr:hover {
+  background-color: #f9f9f9;
+  transition: background-color 0.2s ease;
+}
+
+.project-table td a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.project-table td a:hover {
+  text-decoration: underline;
+}
+
+
+.alert-message {
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: "Segoe UI", sans-serif;
+  display: none;
+  margin-top: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.alert-success {
+  background-color: #b8f9c6;
+  color: #155724;
+  border: 2px solid #558d62;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.pretty-submit-button {
+  margin-top: 15px;
+  background-color: #aaffa4;
+  border: none;
+  color: black;
+  padding: 12px 20px;
+  font-size: 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.pretty-submit-button:hover {
+  background-color: #56ff56;
+}
+
+
+
+
+/* ------------------------------------------------------------
+   Φόρμα draft (form#draftForm)
+   ------------------------------------------------------------ */
+
+/* wrapper */
+#draftForm {
+  margin: 0;
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Ετικέτες ― ίδιο στυλ με τα άλλα */
+#draftForm label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #2c3e50;
+}
+
+/* Input αρχείου – “pill” αισθητική */
+#draftForm input[type="file"] {
+  display: block;
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px dashed #3c8dbc;
+  border-radius: 25px;
+  background: #f9fcff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: border-color .25s;
+  margin-top: 20px;
+}
+#draftForm input[type="file"]:hover    { border-color:#33749e; }
+#draftForm input[type="file"]:focus    { outline:none; border-color:#1e5f80; }
+
+/* Textarea συνδέσμων */
+#draftForm textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 2px solid #ccc;
+  border-radius: 18px;
+  resize: vertical;
+  font-size: 14px;
+  font-family: "Segoe UI", sans-serif;
+  background: #fafafa;
+}
+
+/* Κουμπί υποβολής */
+#draftForm button[type="submit"] {
+  margin-top: 24px;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg,#3c8dbc 0%,#559cc9 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  transition: transform .15s, box-shadow .15s;
+}
+#draftForm button[type="submit"]:hover  { transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,.2); }
+#draftForm button[type="submit"]:active { transform:none;            box-shadow:0 2px 6px  rgba(0,0,0,.15); }
+#draftForm button[type="submit"]:focus  { outline:3px solid #c3dced; outline-offset:2px; }
+
+
+
+
+/* ------------------------------------------------------------
+   Φόρμα συνδέσμου (form#linkForm)
+   ------------------------------------------------------------ */
+
+/* Στυλ για τη φόρμα προσθήκης συνδέσμου */
+.link-only-form {
+  padding: 0;
+  margin: 0;
+  max-width: 100%;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Ετικέτα ― ίδιο στυλ με draft */
+.link-only-form label {
+  display: block;
+  margin: 18px 0 8px;
+  font-weight: 600;
+  font-size: 15px;
+  color: #2c3e50;
+}
+
+/* Πεδίο link – “pill” αισθητική */
+.link-only-form input[type="text"] {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px dashed #3c8dbc;
+  border-radius: 25px;
+  background: #f9fcff;
+  font-size: 14px;
+  transition: border-color .25s;
+  box-sizing: border-box;
+}
+.link-only-form input[type="text"]:hover  { border-color: #33749e; }
+.link-only-form input[type="text"]:focus  { outline: none; border-color: #1e5f80; }
+
+/* Κουμπί προσθήκης συνδέσμου */
+#addLinkBtn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #3c8dbc 0%, #559cc9 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  transition: transform .15s, box-shadow .15s;
+}
+#addLinkBtn:hover  { transform: translateY(-2px); box-shadow: 0 4px 10px rgba(0,0,0,.2); }
+#addLinkBtn:active { transform: none;             box-shadow: 0 2px 6px  rgba(0,0,0,.15); }
+#addLinkBtn:focus  { outline: 3px solid #c3dced; outline-offset: 2px; }
+
+
+
+/* bullets & ellipsis μέσα στο modal */
+.res-list {
+  margin: 8px 0;
+  padding-left: 20px;
+  list-style: disc;
+  max-height: 60vh;          /* αν είναι πολλά, αποκτά scroll */
+  overflow-y: auto;
+}
+.res-list li {
+  margin: 4px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.res-list a { color:#0066cc; text-decoration:none; }
+.res-list a:hover { text-decoration:underline; }
+
+/* κουμπί See links (N) – ίδιο gradient, ίδιες στρογγυλές άκρες */
+.see-links-btn{
+  padding: 6px 10px;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg,#3c8dbc 0%,#559cc9 100%);
+  color:#fff;
+  font-weight:700;
+  font-size:12px;
+  cursor:pointer;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+  transition:transform .15s,box-shadow .15s;
+}
+
+.see-links-btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 4px 10px rgba(0,0,0,.2);
+}
+
+.see-links-btn:active{
+  transform:none;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+}
+
+.see-links-btn:focus{
+  outline:3px solid #c3dced;
+  outline-offset:2px;
+}
+
+.phase-badge{
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:12px;
+  font-size:13px;
+  font-weight:600;
+  color:#fff;
+  background:#fff;         /* ή transparent */
+}
+
+
+
+
+/* ──────────────────────────────────────────────
+   1. wrapper φόρμας προγραμματισμού εξέτασης
+────────────────────────────────────────────── */
+#assessmentForm{
+  margin:0; padding:0; max-width:100%;
+  font-family:"Segoe UI",sans-serif;
+}
+
+/* ετικέτες */
+#assessmentForm label{
+  display:block;
+  margin:18px 0 8px;
+  font-weight:600;
+  font-size:15px;
+  color:#2c3e50;
+}
+
+/* κοινά input (date, time, url, text) + select */
+#assessmentForm input[type="date"],
+#assessmentForm input[type="time"],
+#assessmentForm input[type="text"],
+#assessmentForm input[type="url"],
+#assessmentForm select{
+  width:100%;
+  padding:10px 14px;
+  border:2px dashed #3c8dbc;
+  border-radius:25px;
+  background:#f9fcff;
+  font-size:14px;
+  transition:border-color .25s;
+  box-sizing:border-box;
+}
+#assessmentForm input:hover,
+#assessmentForm select:hover    { border-color:#33749e; }
+#assessmentForm input:focus,
+#assessmentForm select:focus    { outline:none; border-color:#1e5f80; }
+
+/* textarea */
+#assessmentForm textarea{
+  width:100%;
+  padding:12px 14px;
+  border:2px solid #ccc;
+  border-radius:18px;
+  resize:vertical;
+  font-size:14px;
+  font-family:"Segoe UI",sans-serif;
+  background:#fafafa;
+}
+
+/* υποβολή */
+#assessmentForm button[type="submit"]{
+  margin-top:24px;
+  padding:10px 24px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(135deg,#3c8dbc 0%,#559cc9 100%);
+  color:#fff;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+  box-shadow:0 2px 6px rgba(0,0,0,.15);
+  transition:transform .15s,box-shadow .15s;
+}
+#assessmentForm button[type="submit"]:hover  { transform:translateY(-2px); box-shadow:0 4px 10px rgba(0,0,0,.2); }
+#assessmentForm button[type="submit"]:active { transform:none;            box-shadow:0 2px 6px rgba(0,0,0,.15); }
+#assessmentForm button[type="submit"]:focus  { outline:3px solid #c3dced; outline-offset:2px; }
+
+/* ──────────────────────────────────────────────
+   2. εναλλαγή ορατότητας πεδίων (onsite / remote)
+────────────────────────────────────────────── */
+#onsiteFields, #remoteFields{ transition:all .2s ease; }
+
+
+.repo-link-clean {
+  background-color: #7eff87;
+  color: #333;
+  padding: 5px 10px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9em;
+  transition: background-color 0.2s;
+}
+
+.repo-link-clean:hover {
+  background-color: #7eff87;
+}
+
+.repo-link-clean:visited {
+  color: #333;  /* Ίδιο χρώμα, όχι μωβ */
+}
+
+.no-link {
+  color: #888;
+  font-style: italic;
+}
+
+
+
+/* ────────────────────────────────────────
+   Modal “Πόροι” — Ομορφότερη λίστα links
+─────────────────────────────────────────*/
+/* ────────────────────────────────────────
+   Modal “Πόροι” — Card List Styling
+─────────────────────────────────────────*/
+
+.res-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* wrapper για το κάθε link */
+.res-list li {
+  margin: 12px 0;
+  display: flex;
+  align-items: center;
+  background: #f0f4f8;
+  border-radius: 8px;
+  padding: 10px 14px;
+  transition: background 0.2s;
+}
+
+/* εικονίδιο πριν από το link */
+.res-list li::before {
+  content: "\f0c1"; /* FontAwesome “link” */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  margin-right: 10px;
+  color: #3c8dbc;
+  font-size: 1.1em;
+}
+
+/* το ίδιο το anchor */
+.res-list li a {
+  color: #1c3e57;
+  text-decoration: none;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+/* hover state για όλη την li */
+.res-list li:hover {
+  background: #e1ecf7;
+}
+
+/* link hover underline */
+.res-list li a:hover {
+  text-decoration: underline;
+}
+
+/* όταν δεν υπάρχουν links */
+.res-list li.no-links {
+  justify-content: center;
+  color: #666;
+  font-style: italic;
+}
